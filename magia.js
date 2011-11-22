@@ -1,4 +1,4 @@
-/*function portfolioGoTo(elInd, timepace = 0) {
+	/*function portfolioGoTo(elInd, timepace = 0) {
 	var activeInd = $("#content .portfolio .paginator li.active").index();
 	var dist = abs(elInd - activeInd);
 	if (timepace == 0) {
@@ -46,7 +46,6 @@ function slidepf() {
 	}
 }
 
-
 $(document).ready(function(){
 
 
@@ -67,14 +66,14 @@ $(document).ready(function(){
 
 jQuery.preLoadImages('http://dtorres.me/images/portfolio/cuantofaltalogo.png', 'http://dtorres.me/images/about-es.png','http://dtorres.me/images/contact-sel-es.png', 'http://dtorres.me/images/portfolio-sel-es.png');
 	//var timerPort = setInterval("slidepf()", 10000);
-	$("#content").load('about-es.php');
-	/*$("#content").slideUp('fast', function () {
+
+	$("#content").slideUp('fast', function () {
 		$("#content").load('about-es.php', function() {
 			setTimeout('$("#content").slideDown("slow")', 800);
 		});
-	});*/
+	});
 	
-	/*$("menu .portfolio").click( function () {
+	$("menu .portfolio").click( function () {
 		var holi = this;
 		if (!$(this).hasClass("active")) {
 			$("menu li").removeClass("active");
@@ -92,7 +91,17 @@ jQuery.preLoadImages('http://dtorres.me/images/portfolio/cuantofaltalogo.png', '
 						}
 						$("#content .paginator li:first").addClass("active");
 						$("#content").slideDown('slow');
-						$('html,body').animate({ scrollTop: $("#content").offset().top }, { duration: 'slow', easing: 'swing'});			
+						/*var hei = $(".portfolio .showcase li:first").height();
+						$("#content .portfolio").css('height', hei);*/
+						$('html,body').animate({ scrollTop: $("#content").offset().top }, { duration: 'slow', easing: 'swing'});
+						
+						/*//agregamos click para paginador.
+						$("#content .portfolio .paginator .page").click( function(){
+							if (!$(this).hasClass("active")){
+								portfolioGoTo($(this).index);
+							}
+						});*/
+									
 						$("#content .portfolio").overscroll({
 								showThumbs: false,
 								wheelDelta: 0,
@@ -110,27 +119,23 @@ jQuery.preLoadImages('http://dtorres.me/images/portfolio/cuantofaltalogo.png', '
 				});
 			});	
 		}		
-	});*/
+	});
 	
 	$("menu .about").click( function () {
 		var holi = this;
 		if (!$(this).hasClass("active")) {
 			$("menu li").removeClass("active");
-			var e = document.getElementById("content");
-			e.addEventListener("webkitAnimationEnd", function(event) {
+			$("#content").slideUp('slow', function () {
 				$(".rail img").animate({'margin-left': '250'}, 800, function() {
 					$("#content").load('about-es.php', function() {
 						$("menu li").removeClass("active");
 						$(holi).addClass("active");
-						$("#content").removeClass("hide");
-						$("#content").addClass("show");
 						$("#content").slideDown('slow');
 						$('html,body').animate({ scrollTop: $("#content").offset().top }, { duration: 'slow', easing: 'swing'});
 					});
+					
 				});
-			}, false);
-			$("#content").removeClass("show");
-			$("#content").addClass("hide");		
+			});			
 		}		
 	});
 	
@@ -138,24 +143,18 @@ jQuery.preLoadImages('http://dtorres.me/images/portfolio/cuantofaltalogo.png', '
 		var holi = this;
 		if (!$(this).hasClass("active")) {
 			$("menu li").removeClass("active");
-			console.log("gdfsg contacto");
-			var e = document.getElementById("content");
-			e.addEventListener("webkitAnimationEnd", function (event) {
-				console.log("llamamos funcion");
+			$("#content").slideUp('slow', function () {
 				$(".rail img").animate({'margin-left': '700'}, 800, function() {
 					$("#content").load('contact-es.php', function() {
 						$("menu li").removeClass("active");
 						$(holi).addClass("active");
-						$("#content").removeClass("hide");
-						$("#content").addClass("show");
 						$("#content").slideDown('slow');
 						$('html,body').animate({ scrollTop: $("#content").offset().top }, { duration: 'slow', easing: 'swing'});
+						
 					});
+					
 				});
-			}, false);
-			$("#content").removeClass("show");
-			$("#content").addClass("hide");
-			console.log("empezamos contacto");
+			});	
 		}		
 	});	
 });
