@@ -16,7 +16,7 @@
 	<img src="images/portfolio/nyancaticon.png" alt="cuantofaltalogo" width="204" height="208" />
 	<h2>Nyan Cat App</h2>
 	<p>Aplicaci&oacute;n Open Source para el sistema iOS, hecha de forma nativa.<br/>Esta aplicaci&oacute;n  replica el famoso gato m&aacute;s conocido como poptartcat en un loop infinito, con la cancion Nyan de fondo y un contador de tiempo</p>
-	<a href="https://github.com/warorface/NyanCat"><img src="http://playerstage.sourceforge.net/images/github-logo.png" alt="github repo" width="142" height="63" /></a>
+	<a href="https://github.com/dtorres/NyanCat"><img src="http://playerstage.sourceforge.net/images/github-logo.png" alt="github repo" width="142" height="63" /></a>
 </li>
 
 </div>
